@@ -12,7 +12,7 @@
 MCU = atmega168
 
 # frequency
-F_CPU = 16000000UL
+F_CPU = 20000000UL
 
 # main application name (without .hex)
 # eg 'test' when the main function is defined in 'test.c'
@@ -164,7 +164,7 @@ avrdude-terminal:
 	$(AVRDUDE) $(AVRDUDE_FLAGS) -c $(PROG) -P $(DEV) -t
 
 program-%: %.hex
-	$(AVRDUDE) $(AVRDUDE_FLAGS) -c $(PROG) -P $(DEV) -U flash:w:$< -U lock:w:0x2f:m
+	$(AVRDUDE) $(AVRDUDE_FLAGS) -c $(PROG) -P $(DEV) -U flash:w:$<
 
 program-eeprom-%: %.eep.hex
 	$(AVRDUDE) $(AVRDUDE_FLAGS) -c $(PROG) -P $(DEV) -U eeprom:w:$<

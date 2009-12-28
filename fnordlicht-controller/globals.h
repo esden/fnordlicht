@@ -50,14 +50,14 @@
 #define CONFIG_SERIAL 1
 
 /* leds */
-#define LED_PORTNAME B
-#define LED1_PIN     2
-#define LED2_PIN     1
+#define LED_PORTNAME D
+#define LED1_PIN     3
+#define LED2_PIN     6
 
 /* buttons */
 #define BTN_PORTNAME C
-#define BTN1_PIN     5
-#define BTN2_PIN     4
+#define BTN1_PIN     0
+#define BTN2_PIN     1
 
 /* convenient naming */
 #define LED_PORT _OUTPORT(LED_PORTNAME)

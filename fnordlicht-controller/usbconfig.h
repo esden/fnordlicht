@@ -34,7 +34,7 @@ section at the end of this file).
 /* This is the bit number in USB_CFG_IOPORT where the USB D- line is connected.
  * This may be any bit in the port.
  */
-#define USB_CFG_DPLUS_BIT       3
+#define USB_CFG_DPLUS_BIT       2
 /* This is the bit number in USB_CFG_IOPORT where the USB D+ line is connected.
  * This may be any bit in the port. Please note that D+ must also be connected
  * to interrupt pin INT0! [You can also use other interrupts, see section
@@ -59,13 +59,13 @@ section at the end of this file).
 
 /* ----------------------- Optional Hardware Config ------------------------ */
 
-#define USB_CFG_PULLUP_IOPORTNAME   C
+#define USB_CFG_PULLUP_IOPORTNAME   B
 /* If you connect the 1.5k pullup resistor from D- to a port pin instead of
  * V+, you can connect and disconnect the device from firmware by calling
  * the macros usbDeviceConnect() and usbDeviceDisconnect() (see usbdrv.h).
  * This constant defines the port on which the pullup resistor is connected.
  */
-#define USB_CFG_PULLUP_BIT          3
+#define USB_CFG_PULLUP_BIT          0
 /* This constant defines the bit number in USB_CFG_PULLUP_IOPORT (defined
  * above) where the 1.5k pullup resistor is connected. See description
  * above for details.
@@ -113,7 +113,7 @@ section at the end of this file).
  * interval. The value is in milliseconds and must not be less than 10 ms for
  * low speed devices.
  */
-#define USB_CFG_IS_SELF_POWERED         1
+#define USB_CFG_IS_SELF_POWERED         0
 /* Define this to 1 if the device has its own power supply. Set it to 0 if the
  * device is powered from the USB bus.
  */
@@ -358,12 +358,12 @@ section at the end of this file).
  * interrupt than INT0, you may have to define some of these.
  */
 /* #define USB_INTR_CFG            MCUCR */
-#define USB_INTR_CFG_SET        ((1 << ISC10) | (1 << ISC11))
+//#define USB_INTR_CFG_SET        ((1 << ISC10) | (1 << ISC11))
 /* #define USB_INTR_CFG_CLR        0 */
 /* #define USB_INTR_ENABLE         GIMSK */
-#define USB_INTR_ENABLE_BIT     INT1
+//#define USB_INTR_ENABLE_BIT     INT1
 /* #define USB_INTR_PENDING        GIFR */
-#define USB_INTR_PENDING_BIT    INTF1
-#define USB_INTR_VECTOR         SIG_INTERRUPT1
+//#define USB_INTR_PENDING_BIT    INTF1
+//#define USB_INTR_VECTOR         SIG_INTERRUPT1
 
 #endif /* __usbconfig_h_included__ */

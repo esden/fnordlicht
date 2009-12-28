@@ -265,8 +265,8 @@ static PT_THREAD(ui_input(struct pt*thread))
         if (btn_press & _BV(BTN1_PIN)) {
             PT_WAIT_UNTIL(thread, fifo_empty(&global_uart.tx));
             send_resync(0);
-            PT_WAIT_UNTIL(thread, fifo_empty(&global_uart.tx));
-            send_stop(255);
+            //PT_WAIT_UNTIL(thread, fifo_empty(&global_uart.tx));
+            //send_stop(255);
             PT_WAIT_UNTIL(thread, fifo_empty(&global_uart.tx));
             start_program(current_program);
             current_program = (current_program+1) % MASTER_PROGRAMS;
